@@ -1,0 +1,2 @@
+module Classmate::AddressBookHelper
+end
