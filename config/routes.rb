@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # resources :address_book
   end
+
   #资源/address_book（前面没有 /classmate)
   resources :address_book, module: 'classmate'
 
