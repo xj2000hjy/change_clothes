@@ -36,4 +36,8 @@ class Classmate::AddressBookController < ApplicationController
 
   def check_valid
   end
+
+  def publish_info
+
+  end
 end
