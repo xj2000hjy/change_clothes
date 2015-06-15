@@ -23,18 +23,23 @@ class Classmate::AddressBookController < ApplicationController
   end
 
   def update
+
   end
 
   def delete
+
   end
 
   def show
+
   end
 
   def index
+
   end
 
   def check_valid
+    
   end
 
   def publish_info
