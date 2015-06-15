@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'address_book/login'
   get 'address_book/logout'
   post 'address_book/check_valid'
-
   # resources :address_book
   end
 
