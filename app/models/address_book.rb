@@ -1,8 +1,12 @@
 class AddressBook < ActiveRecord::Base
 
+  #引入生成随机数模块
+  include JackLau::RandomUtil
+
   #default_scope -> { order(id: :desc) }
   default_scope lambda { order('id DESC')}
 
+  #类实例方法
   class << self
 
     #添加新用户
@@ -73,7 +77,7 @@ class AddressBook < ActiveRecord::Base
         when true
           self.where.not(is_admin:false ).pluck(:username, :name, :ip)
         when false
-          self.where.not(is_admin: true).pluck(:username, :name, :ip)
+          self.where.not(is_admin: true).select('username,name,ip')
         else
           self.none
       end

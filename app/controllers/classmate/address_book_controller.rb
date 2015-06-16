@@ -3,7 +3,7 @@ class Classmate::AddressBookController < ApplicationController
   http_basic_authenticate_with name: 'admin', password: 'admin', :only => :login
 
   def login
-   addr =  AddressBook.create
+   @user = AddressBook.new
   end
 
   def logout
@@ -38,6 +38,7 @@ class Classmate::AddressBookController < ApplicationController
 
   end
 
+  #检测登录用户是否有效
   def check_valid
 
   end

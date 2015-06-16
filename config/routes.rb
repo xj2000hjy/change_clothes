@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   #root to: 'classmate/address_book#login', as: :root, via: [:get, :post]
-  root 'classmate/address_book#login', as: :root, via: [:get, :post]
+  root 'classmate/address_book#login', as: :root, via: [:get]
 
   #把 /address_book（前面没有 /classmate）映射到 Classmate::AddressBookController 控制器上，可以这么声明
   scope module: :classmate do
