@@ -1,9 +1,13 @@
 class Classmate::AddressBookController < ApplicationController
   #验证用户登录
-  http_basic_authenticate_with name: 'admin', password: 'admin', :only => :login
+  # http_basic_authenticate_with name: 'admin', password: 'admin', :only => :login
+
+  #引入生成随机数模块
+  include JackLau::UtilRandom
 
   def login
-   @user = AddressBook.new
+    @user = AddressBook.new
+    # @rnd = generate_time_random
   end
 
   def logout

@@ -1,0 +1,48 @@
+/*为了简化font-size的换算，需要在css中的body选择器中声明font-size=62.5%
+这就使em值变为 16px*62.5%=10px,这样 12px=1.2em, 10px=1em
+也就是说只需要将你的原来的px数值除以10，然后换上em作为单位就行了。
+*/
+
+body{
+    font-size: 62.5%;
+    color: #555;
+}
+/*样式清零*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong, sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption, tbody,tfoot,thead,tr,th,td{
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    margin:0;
+    padding:0;
+}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/*超链接样式*/
+a:link{text-decoration:none; color:#00f;}
+a:visited{text-decoration:none; color:#00f;}
+a:hover{text-decoration:none; color:#00F;}
+a:active{text-decoration:none; color:#F00;}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

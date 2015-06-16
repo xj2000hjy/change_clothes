@@ -1,14 +1,12 @@
 class AddressBook < ActiveRecord::Base
-
   #引入生成随机数模块
-  include JackLau::RandomUtil
+  include JackLau::UtilRandom
 
   #default_scope -> { order(id: :desc) }
   default_scope lambda { order('id DESC')}
 
-  #类实例方法
+  #类方法
   class << self
-
     #添加新用户
     def add_user?(options = {})
       return false if options.blank?
