@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  #root to: 'classmate/address_book#login', as: :root, via: [:get, :post]
-  root 'classmate/address_book#login', as: :root, via: [:get]
+  #root to: 'classmate/address_books#login', as: :root, via: [:get, :post]
+  root 'classmate/address_books#login', as: :root, via: [:get]
 
   #把 /address_book（前面没有 /classmate）映射到 Classmate::AddressBookController 控制器上，可以这么声明
   scope module: :classmate do
-  get 'address_book/login'
-  get 'address_book/logout'
-  post 'address_book/check_valid'
-  # resources :address_book
+  get 'address_books/login'
+  get 'address_books/logout'
+  post 'address_books/check_valid'
+  resources :address_books
   end
 
   #资源/address_book（前面没有 /classmate)
-  resources :address_book, module: 'classmate'
+  # resources :address_books, module: 'classmate'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
