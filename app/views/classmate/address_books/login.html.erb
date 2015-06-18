@@ -32,7 +32,7 @@
 <%end%>
 
 <div id="loginForm">
-    <%=form_for @user, url: {action: 'check_valid'}, authenticity_token: false do |f|%>
+    <%=form_tag  @user, url: {action: 'check_valid'}, authenticity_token: false do |f|%>
     <table width="100%" align="center">
       <tr>
         <td align="right"><%= f.label :username, '登录用户名:'%></td><td align="left"><%= f.text_field :username %></td>
