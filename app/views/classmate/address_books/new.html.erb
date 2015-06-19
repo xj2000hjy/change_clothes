@@ -3,9 +3,15 @@
   #reg_address{
       width: 400px;
       margin: 0 auto;
-      background-color: #eee;
       text-align: center;
       padding: 3px;
+  }
+  table{
+      font-size: 1.2em;
+      width: 100%;
+  }
+  table td{
+      line-height: 30px;
   }
   h1{
       height: 25px;
@@ -16,10 +22,72 @@
 
 <div id="reg_address">
   <h1>注册信息</h1>
-  <%= form_for @address_book, url:{action: address_books_path}, html:{method: :post,multipart: true, authenticity_token: false} do |f|%>
+  <%= form_for @address_book, url:address_books_path, html:{method: :post,multipart: true, authenticity_token: false} do |f|%>
   <table>
     <tr>
-        <td align="right"><%= f.label '登录用户名:', :ursername %></td><td align="left"><%= f.text_field :username %></td>
+      <td align="right"> &nbsp;<%= f.label :ursername, '登录用户名:' %></td>
+      <td align="left"> &nbsp;<%= f.text_field :username %></td>
+    </tr>
+    <tr>
+      <td align="right"> &nbsp;<%= f.label :password,'登录密码:' %></td>
+      <td align="left"> &nbsp;<%= f.password_field :password, size: 20,maxlength:20 %></td>
+    </tr>
+    <tr>
+      <td align="right"> &nbsp;<%= label_tag :repassword, '重输密码:' %></td>
+      <td align="left"> &nbsp;<%= password_field_tag :repassword,nil, size: 20,maxlength:20 %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :name, '用户姓名:' %></td>
+      <td align="left"><%= f.text_field :name, size:20, maxlength:10 %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :sex, '用户性别:' %></td>
+      <td align="left"><%=  f.select :sex, [['保密',-1],['男生',1],['女生',0]], {include_blank: '请选择...',disabled: -1, selected: ''}%></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :head_portrait, '上传头像:' %></td>
+      <td align="left"><%= f.file_field :head_portrait %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :birthday, '出生日期:' %></td>
+      <td align="left"><%= f.date_select :birthday,{use_month_numbers: true} %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :telephone, '联系电话:' %></td>
+      <td align="left"><%= f.telephone_field :telephone %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :qq, 'QQ号码:' %></td>
+      <td align="left"><%= f.text_field :qq %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :email, 'E-mail:' %></td>
+      <td align="left"><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :weixin, '微信号:' %></td>
+      <td align="left"><%= f.text_field :weixin %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :birth_province_code, '出生地:' %></td>
+      <td align="left"><%= f.select :birth_province_code, [[]] %> &nbsp;<%= f.select :birth_city_code,[[]] %> &nbsp;<%= f.select :birth_area_code, [[]] %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :live_province_code, '居住地:' %></td>
+      <td align="left"><%= f.select :live_province_code, [[]] %> &nbsp;<%= f.select :live_city_code, [[]] %> &nbsp;<%= f.select :live_area_code, [[]] %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :birth_city_code, '出生地(城市):' %></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :birth_area_code, '出生地(区县):' %></td>
+      <td align="left"></td>
+    </tr>
+
+
+    <tr>
+      <td align="center" colspan="2"><%= f.submit '提交注册信息', class:'btn'%></td>
     </tr>
   </table>
   <% end %>

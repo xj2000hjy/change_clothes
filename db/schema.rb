@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611071237) do
+ActiveRecord::Schema.define(version: 20150619093050) do
 
   create_table "address_books", force: :cascade do |t|
     t.string   "username",            limit: 255
@@ -39,22 +39,21 @@ ActiveRecord::Schema.define(version: 20150611071237) do
     t.boolean  "is_valid",            limit: 1,   default: true
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+    t.string   "brief",               limit: 255
+    t.string   "string",              limit: 255
   end
 
-  create_table "area", force: :cascade do |t|
-    t.string "code",     limit: 6,  null: false
-    t.string "name",     limit: 20, null: false
-    t.string "citycode", limit: 6,  null: false
+  create_table "areas", force: :cascade do |t|
+    t.string "name",    limit: 20, null: false
+    t.string "city_id", limit: 6,  null: false
   end
 
-  create_table "city", force: :cascade do |t|
-    t.string "code",         limit: 6,  null: false
-    t.string "name",         limit: 20, null: false
-    t.string "provincecode", limit: 6,  null: false
+  create_table "cities", force: :cascade do |t|
+    t.string "name",        limit: 20, null: false
+    t.string "province_id", limit: 6,  null: false
   end
 
-  create_table "province", force: :cascade do |t|
-    t.string "code", limit: 6,  null: false
+  create_table "provinces", force: :cascade do |t|
     t.string "name", limit: 20, null: false
   end
 
