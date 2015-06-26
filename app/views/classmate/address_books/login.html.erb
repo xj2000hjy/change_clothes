@@ -1,4 +1,6 @@
-<% content_for :style_link do%>
+<% provide(:title, '后台登录入口...') %>
+<%# content_for :style_link do%>
+<%provide(:style_link) do %>
 <style type="text/css">
 #loginForm{
     position: absolute;
@@ -26,17 +28,19 @@
 }
 </style>
 
-<!--<script type="text/javascript">-->
-//  $(function(){
-//      $("#username").onfocus(function(){
-//          if($(this).val == '请输入你的登录名'){$(this).val('')};
-//      });
-//      $("#username").onblur(function(){
-//          alert($(this).val);
-//          if ($(this).val == ''){$(this).val('请输入你的登录名');}
-//      });
-//  });
-<!--</script>-->
+<script type="text/javascript">
+$(function(){
+  $("#username").focus(function(){
+    alert($("#username").val);
+    if($("#username").val == '请输入你的登录名'){$("#username").val('')};
+  });
+
+  $("#username").blur(function(){
+    alert("blur");
+    if ($("#username").val == ''){$("#username").val('请输入你的登录名');}
+  });
+});
+</script>
 
 <%end%>
 
@@ -44,7 +48,7 @@
     <%=form_tag({action: 'check_valid'}, {authenticity_token: false}) do %>
     <table width="100%" align="center">
       <tr>
-        <td align="right"><%= label_tag :username, '登录用户名:'%></td><td align="left"><%= text_field_tag :username,'请输入你的登录名' %></td>
+        <td align="right"><%= label_tag :username, '登录用户名:'%></td><td align="left"><%= text_field_tag :username,'请输入你的登录名',id:'username' %></td>
       </tr>
       <tr>
         <td align="right"><%= label_tag :password, '登录密码:'%></td><td align="left"><%= password_field_tag :password,nil, size:20,maxlength:20 %></td>
