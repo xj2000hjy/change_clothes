@@ -37,6 +37,10 @@ gem 'thin', '1.6.3'
 #Redis中Hash类型映射gem包
 gem 'ohm', '~> 2.2.1'
 
+#添加支持MongoDB包
+gem 'mongoid'
+gem "bson_ext"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
