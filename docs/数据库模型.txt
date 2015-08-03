@@ -1,0 +1,33 @@
+表名: address_books
+字段概要:
+-----------------------------------------------
+字段名称                 说明
+-----------------------------------------------
+id                      用户ID号(唯一)
+username                登录用户名
+password
+password_salt
+name
+sex
+head_portrait
+birthday
+age
+telephone
+mobile
+qq
+email
+weixin
+birth_province_code
+birth_city_code
+birth_area_code
+live_province_code
+live_city_code
+live_area_code
+ip
+login_address
+login_count
+is_valid
+created_at
+updated_at
+brief
+strin

@@ -34,7 +34,7 @@ address_books_check_valid POST   /address_books/check_valid(.:format) classmate/
   end
   #地址簿列表
   def index
-
+    @addresses = AddressBook.all
   end
 
   #查看指定的地址簿详细信息
