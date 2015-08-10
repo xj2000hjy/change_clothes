@@ -1,57 +1,53 @@
 <% provide(:title, '后台登录入口...') %>
 <%# content_for :style_link do%>
-<%provide(:style_link) do %>
-<style type="text/css">
-#loginForm{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    font-size:1.2em;
-    width: 280px;
-    height: 120px;
-    line-height: 26px;
-    margin-top: -60px;
-    margin-left: -140px;
-    padding-top: 22px;
-    text-align: center;
-    border-radius: 5px;
-    border:1px solid #ddd;
-    box-shadow: 0  5px 5px #ccc;
-}
-#loginForm table td{
-    padding: 2px;
-}
-#reg{
-    position: absolute;
-    right: 8px;
-    bottom: 0;
-}
-</style>
+<% provide(:style_link) do %>
+  <style type="text/css">
+    #loginForm{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size:1.2em;
+        width: 280px;
+        height: 120px;
+        line-height: 26px;
+        margin-top: -60px;
+        margin-left: -140px;
+        padding-top: 22px;
+        text-align: center;
+        border-radius: 5px;
+        border:1px solid #ddd;
+        box-shadow: 0  5px 5px #ccc;
+    }
+    #loginForm table td{
+        padding: 2px;
+    }
+    #reg{
+        position: absolute;
+        right: 8px;
+        bottom: 0;
+    }
+  </style>
 
-<script type="text/javascript">
-$(function(){
-  $("#username").focus(function(){
-    alert($("#username").val);
-    if($("#username").val == '请输入你的登录名'){$("#username").val('')};
-  });
-
-  $("#username").blur(function(){
-    alert("blur");
-    if ($("#username").val == ''){$("#username").val('请输入你的登录名');}
-  });
-});
-</script>
-
-<%end%>
+  <script type="text/javascript">
+    $(function(){
+      $("#username").focus(function(){
+        target = $(this)
+        if(target.val() == '请输入你的登录名'){target.val('')};
+      }).blur(function(){
+        if (target.val() == ''){target.val('请输入你的登录名');}
+      });
+    });
+  </script>
+<% end %>
 
 <div id="loginForm">
     <%=form_tag({action: 'check_valid'}, {authenticity_token: false}) do %>
     <table width="100%" align="center">
       <tr>
-        <td align="right"><%= label_tag :username, '登录用户名:'%></td><td align="left"><%= text_field_tag :username,'请输入你的登录名',id:'username' %></td>
+        <td align="right"><%= label_tag :username, '登录用户名:'%></td><td align="left"><%= text_field_tag :username, '请输入你的登录名', id:'username' %></td>
       </tr>
       <tr>
-        <td align="right"><%= label_tag :password, '登录密码:'%></td><td align="left"><%= password_field_tag :password,nil, size:20,maxlength:20 %></td>
+        <td align="right"><%= label_tag :password, '登录密码:'%></td><td align="left"><%= password_field_tag :password,'', size:20, maxlength:20 %></td>
       </tr>
       <tr>
         <td colspan="2"> <%= submit_tag '重新输入', type: 'reset', class: 'btn'%> &nbsp; <%= submit_tag '我要登录', type: 'submit', class:'btn' %> </td>

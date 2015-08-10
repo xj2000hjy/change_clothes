@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   #把 /address_book（前面没有 /classmate）映射到 Classmate::AddressBookController 控制器上，可以这么声明
   scope module: :classmate do
-  get 'address_books/login'
-  get 'address_books/logout'
-  post 'address_books/check_valid'
-  resources :address_books
+    get 'address_books/login'
+    get 'address_books/logout'
+    post 'address_books/check_valid'
+    resources :address_books
   end
 
   #资源/address_book（前面没有 /classmate)

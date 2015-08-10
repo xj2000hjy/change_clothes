@@ -14,3 +14,16 @@
 //require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// <script type="application/javascript" src="chrome://browser/content/feeds/subscribe.js">
+// </script>
+// <body onload="SubscribeHandler.writeContent();" onunload="SubscribeHandler.uninit();">
+// <script type="application/javascript">
+// SubscribeHandler.init();
+// </script>
+
+// <div id="feedSubscribeLine"></div>
+
+// #feedSubscribeLine {
+//     -moz-binding: url("subscribe.xml#feedreaderUI");
+// }
