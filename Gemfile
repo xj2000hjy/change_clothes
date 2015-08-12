@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
+gem 'bcrypt', '~> 3.1.10'
+gem 'bcrypt-ruby', '3.1.5'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -33,9 +33,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 #安装thin服务器
-gem 'thin', '1.6.3'
+gem 'thin', '~> 1.6.3'
 #Redis中Hash类型映射gem包
 gem 'ohm', '~> 2.2.1'
+
+#OAuth认证和提供者插件
+gem 'oauth', '0.4.7'
+#解析HTML插件(http://www.nokogiri.org/)
+gem 'nokogiri', '1.6.6.2'
+#网络HTTP访问操作(POST,GET)
+gem 'httpclient', '2.6.0.1'
+#模拟浏览器行为
+gem 'watir'
 
 #添加支持MongoDB包
 gem 'mongoid'

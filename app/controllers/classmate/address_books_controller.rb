@@ -1,7 +1,7 @@
 class Classmate::AddressBooksController < ApplicationController
   #验证用户登录
   # http_basic_authenticate_with name: 'admin', password: 'admin', :only => :login
-
+  before_filter :verify_access, :only => :login
 =begin
 > rake routes
 -------------------------------------------------------------------------------------------------------
@@ -76,4 +76,15 @@ address_books_check_valid POST   /address_books/check_valid(.:format) classmate/
   def publish_info
 
   end
+
+  protected
+  # Use basic authentication in my realm to get a user object.
+  # Since this is a security filter - return false if the user is not
+  # authenticated.
+  def verify_access
+    authenticate_or_request_with_http_basic('AddressBooks') do |username, password|
+      name == 'admin' && password == 'admin'
+    end
+  end
+
 end

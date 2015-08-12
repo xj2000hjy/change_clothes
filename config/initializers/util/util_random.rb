@@ -8,10 +8,14 @@
 #
 module JackLau
   module UtilRandom
+    require 'base64'
+    require 'md5'
+    require 'bcrypt' #gem install bcrypt
+
     #定义钩子方法-类扩展混入
     def self.included(base) #模块用 included
       # @@target_class = base
-      puts base
+      # puts base
       base.extend(RandomHelper) #在模块中定义相关的类方法
       super
     end
@@ -77,9 +81,28 @@ module JackLau
       else
         result = ('a'..'z').to_a << ('A'..'Z').to_a
       end
-
-      result.shuffle(random: rand(len))[0...len].join('')
       # result.sample(len).join('')
+      result.shuffle[0...len].join('')
+    end
+
+    #生成指定长度的随机码
+    def get_random(length=32)
+      Base64.encode64(OpenSSL::Random.random_bytes(32)).gsub(/\W/, '')[0, length]
+    end
+
+    #生成Token指令
+    def create_token(str=Time.now.to_i)
+      MD5.md5(str)
+    end
+
+    #密码加密
+    def encrytp_password(pwd = '')
+      BCrypt::Engine.hash_secret(password, BCrypt::Engine.generate_salt)
+    end
+
+    #获取指定长度的随机密码
+    def get_rand_password(length=10)
+      Array.new(length).map { (65 + rand(58)).chr }.join
     end
   end
 end
