@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use mysql as the database for Active Record
@@ -39,21 +38,38 @@ gem 'ohm', '~> 2.2.1'
 
 #OAuth认证和提供者插件
 gem 'oauth', '0.4.7'
+
 #解析HTML插件(http://www.nokogiri.org/)
 gem 'nokogiri', '1.6.6.2'
+
 #网络HTTP访问操作(POST,GET)
 gem 'httpclient', '2.6.0.1'
+
 #模拟浏览器行为
-gem 'watir'
+gem 'watir', '5.0.0'
+gem 'mechanize', '2.7.3'
+
+#转换json和xml格式的数据为Hash
+gem 'crack', '0.4.2'
+#为Ruby Class提供快速Web服务
+gem 'httparty', '0.13.5'
+#转化汉字为拼音
+gem 'chinese_pinyin', '1.0.0'
+#国家、省、市的数据
+gem 'chinese_regions'
 
 #添加支持MongoDB包
-gem 'mongoid'
-gem "bson_ext"
+gem 'mongoid', '4.0.2'
+gem "bson_ext", '1.5.1'
 
 #条件查询gem包
-gem 'rd_searchlogic', '~> 3.0.1'
+gem 'rd_searchlogic', '~> 3.0.1', :require => 'searchlogic'
+gem 'faker', '1.5.0'
+
 #分页插件
 gem 'will_paginate', '~> 3.0.6'
+#表单插件
+gem 'simple_form', '3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
