@@ -56,7 +56,7 @@ gem 'httparty', '0.13.5'
 #转化汉字为拼音
 gem 'chinese_pinyin', '1.0.0'
 #国家、省、市的数据
-gem 'chinese_regions'
+#gem 'chinese_regions'
 
 #添加支持MongoDB包
 gem 'mongoid', '4.0.2'
