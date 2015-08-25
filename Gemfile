@@ -71,6 +71,10 @@ gem 'will_paginate', '~> 3.0.6'
 #表单插件
 gem 'simple_form', '3.1.0'
 
+#服务器端服务插件
+gem 'em-http-server', '0.1.8'
+gem 'eventmachine', '1.0.7'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
