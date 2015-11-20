@@ -1,12 +1,12 @@
-load 'util_random.rb'
+#load 'util_random.rb'
 
-class RandomTest
-  include JackLau::UtilRandom
+# class RandomTest
+#   include JackLau::UtilRandom
 
-  def test_random
-    generate_random(23)
-  end
-end
+#   def test_random
+#     generate_random(23)
+#   end
+# end
 
 # puts RUBY_VERSION
 # puts RUBY_COPYRIGHT

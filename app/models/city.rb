@@ -2,6 +2,9 @@ class City < ActiveRecord::Base
   self.table_name = 'cities'
   self.primary_key = 'id'
 
+  has_many :districts
+  belongs_to :region
+
   #关联表结构:
   #provinces(id,....)
   #cities(id,province_id,...)
