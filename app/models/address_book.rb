@@ -80,7 +80,5 @@ class AddressBook < ActiveRecord::Base
           self.none
       end
     end
-
   end
-
 end
