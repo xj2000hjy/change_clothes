@@ -12,8 +12,8 @@ class AddressBook < ActiveRecord::Base
       return false if options.blank?
 
       if not exists?(username: options[:username])
-        #where查询返回数组类型
-        where(username: options[:username]).first_or_create(options)
+        # where查询返回数组类型
+        # where(username: options[:username]).first_or_create(options)
         # where(username: options[:username]).first_or_initialize(options)
         # where(username: options[:username]).create(options)
         # find_or_initialize_by(username: options[:username])
