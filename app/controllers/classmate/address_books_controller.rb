@@ -83,7 +83,7 @@ address_books_check_valid POST   /address_books/check_valid(.:format) classmate/
   # authenticated.
   def verify_access
     authenticate_or_request_with_http_basic('AddressBooks') do |username, password|
-      name == 'admin' && password == 'admin'
+      username == 'admin' && password == 'admin123456'
     end
   end
 
